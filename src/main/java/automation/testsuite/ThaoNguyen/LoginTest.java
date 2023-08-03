@@ -12,7 +12,7 @@ public class LoginTest extends CommonBase {
 	WebDriver driver;
 	@BeforeTest
 	public void openchromeDriver() {
-		driver = initChromeDirvier(CT_Account.webURL);
+		driver = initChromeDriver(CT_Account.webURL);
 	}
 	@Test
 	public void Loginsucessfully() {

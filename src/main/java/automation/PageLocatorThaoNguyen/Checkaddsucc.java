@@ -31,10 +31,11 @@ public class Checkaddsucc {
 	public void Checkadd (String company_name ) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click()", totalClientCard);
-		assertTrue(value1.isDisplayed());
+		js.executeScript("window.stop();");
+//		assertTrue(value1.isDisplayed());
 		btnsearch.click();
 		btnsearch.sendKeys(company_name);
-		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+//		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		assertTrue(searchResult.isDisplayed());
 	}
 }

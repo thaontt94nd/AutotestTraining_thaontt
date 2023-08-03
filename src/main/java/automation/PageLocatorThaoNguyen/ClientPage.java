@@ -78,6 +78,15 @@ public class ClientPage {
 	@FindBy(xpath="//div[@id='link-of-add-contact-modal']/following-sibling::button[3]")
 	private WebElement btnsave;
 	
+	@FindBy(xpath="//span[text()='Total clients']")
+	private WebElement totalClientCard;
+	
+	@FindBy(xpath="//input[@type='search']")
+	private WebElement btnsearch;
+	
+	@FindBy(xpath="//a[normalize-space()='thao4']")
+	private WebElement searchResult;
+	
 	public ClientPage (WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -126,9 +135,8 @@ public class ClientPage {
 		
 //		Actions actions = new Actions(driver);
 //		actions.moveByOffset(0, 100000).click().build().perform();
-		WebElement element = driver.findElement(By.id("currency_symbol"));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		js.executeScript("arguments[0].scrollIntoView(true);", txtcurrency_symbol);
 		
 		txtcurrency_symbol.sendKeys(currency_symbol);
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
@@ -138,5 +146,18 @@ public class ClientPage {
 		
 		btnsave.click();
 		
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
+		js.executeScript("arguments[0].click()", totalClientCard);
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		
+		btnsearch.click();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
+		btnsearch.sendKeys(company_name);
+//		btnsearch.sendKeys("thao1");
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
+		assertTrue(searchResult.isDisplayed());
 	}	
 }

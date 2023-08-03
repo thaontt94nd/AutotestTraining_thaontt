@@ -83,6 +83,9 @@ public class ClientPage_Factory {
 	@FindBy(xpath="//div[@id='link-of-add-contact-modal']/following-sibling::button[3]")
 	private WebElement btnsave;
 	
+	@FindBy(xpath="//h4[normalize-space()='Add client']//following-sibling::button")
+	public static WebElement btnclose2;
+	
 	@FindBy(xpath="//span[text()='Total clients']")
 	private WebElement totalClientCard;
 	
@@ -123,5 +126,59 @@ public class ClientPage_Factory {
 		cbdisable_online_payment.click();
 		btnsave.click();
 	}
-
+	public void ClientFuntion1 (String company_name, String address, String city,String state, String zip, String country, String phone,
+			String website,String vat_number, String gst_number,String currency_symbol) {
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		btnaddclient.click();
+		rdotype_person.click();
+		txtcompany_name.sendKeys(company_name);
+		drpOwner.click();
+		ownerOption.click();
+		txtaddress.sendKeys(address);
+		txtcity.sendKeys(city);
+		txtstate.sendKeys(state);
+		txtzip.sendKeys(zip);
+		txtcountry.sendKeys(country);
+		txtphone.sendKeys(phone);
+		txtwebsite.sendKeys(website);
+		txtvat_number.sendKeys(vat_number);
+		txtgst_number.sendKeys(gst_number);
+		drpClient_groups.click();
+		Client_groupsOption.click();
+		drpcurrency.click();
+		currencyOption.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", txtcurrency_symbol);
+		txtcurrency_symbol.sendKeys(currency_symbol);
+		cbdisable_online_payment.click();
+		btnclose.click();
+	}
+	
+	public void ClientFuntion2 (String company_name, String address, String city,String state, String zip, String country, String phone,
+			String website,String vat_number, String gst_number,String currency_symbol) {
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		btnaddclient.click();
+		rdotype_person.click();
+		txtcompany_name.sendKeys(company_name);
+		drpOwner.click();
+		ownerOption.click();
+		txtaddress.sendKeys(address);
+		txtcity.sendKeys(city);
+		txtstate.sendKeys(state);
+		txtzip.sendKeys(zip);
+		txtcountry.sendKeys(country);
+		txtphone.sendKeys(phone);
+		txtwebsite.sendKeys(website);
+		txtvat_number.sendKeys(vat_number);
+		txtgst_number.sendKeys(gst_number);
+		drpClient_groups.click();
+		Client_groupsOption.click();
+		drpcurrency.click();
+		currencyOption.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", txtcurrency_symbol);
+		txtcurrency_symbol.sendKeys(currency_symbol);
+		cbdisable_online_payment.click();
+		btnsave_continue.click();
+	}
 }

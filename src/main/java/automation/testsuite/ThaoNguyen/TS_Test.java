@@ -10,7 +10,7 @@ public final class TS_Test extends CommonBase {
 
   @BeforeMethod
   public void init() {
-    driver = initDriverTest("https://partners-staging.capa.ai/");    
+    driver = initChromeDriver("https://partners-staging.capa.ai/");    
     //openPage("https://partners-staging.capa.ai/", driver);
     }
 

@@ -18,11 +18,11 @@ import automation.constant.CT_Account;
 public class ClientTest extends CommonBase {
 	@BeforeTest
 	public void openchromeDriver() {
-		driver = initChromeDirvier(CT_Account.webURL);
+		driver = initChromeDriver(CT_Account.webURL);
 	}
 	
 	@Test
-	public void addclient() {
+	public void addclientSucess() {
 		loginPage_Factory login = new loginPage_Factory(driver);
 		login.LoginFuntion("admin@demo.com", "riseDemo");
 		
@@ -31,20 +31,14 @@ public class ClientTest extends CommonBase {
 		
 		WebElement addclient= driver.findElement(ClientPage.addclient);
 		addclient.click();
-	}
-	@Test
-	public void addclientSucess() {
+		
 		ClientPage addclientSucess = new ClientPage(driver);
-		addclientSucess.ClientFuntion("", "ABC", "ABC", "ABC", "ABC", "ABC", "098", "ABC", "ABC", "ABC", "ABC");
+		addclientSucess.ClientFuntion("thao4", "ABC", "ABC", "ABC", "ABC", "ABC", "098", "ABC", "ABC", "ABC", "ABC");
+		
 	}
 	
 	@Test
 	public void addclient_nullcompany() {
-		loginPage_Factory login = new loginPage_Factory(driver);
-		login.LoginFuntion("admin@demo.com", "riseDemo");
-		
-		WebElement menuclient= driver.findElement(DashboardPage.menuclient);
-		menuclient.click();
 		
 		WebElement addclient= driver.findElement(ClientPage.addclient);
 		addclient.click();

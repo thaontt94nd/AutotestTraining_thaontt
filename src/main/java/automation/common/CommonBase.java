@@ -1,6 +1,7 @@
 package automation.common;
 import static org.testng.Assert.assertTrue;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.By;
@@ -8,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -140,5 +143,54 @@ public class CommonBase {
 		System.out.println("indexofIframe: " + indexofIframe);
 		return indexofIframe;
 	}
+	public  WebDriver initChromeDriver(){
+		System.out.println("Lauching Chrome Brower");
+		ChromeOptions options = new ChromeOptions();
+		System.setProperty("webdriver.chrome.driver",
+		System.getProperty("user.dir") + "\\driver\\chromedriver.exe");		
+		driver = new ChromeDriver(options);
+		driver.manage().window().maximize();
+		return driver;
+	}
+	public  WebDriver initfirefoxDriver(){
+		System.out.println("Lauching Firefox Brower");
+		System.setProperty("webdriver.firefox.driver",
+		System.getProperty("user.dir") + "\\driver\\geckodriver.exe");		
+		driver = new FirefoxDriver();
+		driver.manage().window().maximize();
+		return driver;
+	}
+	
+	public  WebDriver initEdgeDriver(){
+		System.out.println("Lauching edge Brower");
+		System.setProperty("webdriver.edge.driver",
+		System.getProperty("user.dir") + "\\driver\\msedgedriver.exe");		
+		driver = new EdgeDriver();
+		driver.manage().window().maximize();
+		return driver;
+	}
+	 public WebDriver setupDriver(String browserName) {
+		 switch (browserName.trim().toLowerCase()) {
+		 case "chrome":
+			 driver = initChromeDriver();
+			 break;
+		 case "firefox":
+			 driver = initfirefoxDriver();
+			 break;
+		 case "edge":
+			 driver = initEdgeDriver();
+			 break;
+		default:
+			System.out.println("Browser"+browserName+ "is invalid, Launching chrome as browser of choice...");
+			driver = initChromeDriver();
+		 }
+		 return driver;
+	 }
+	 public void setText(By by, String value) {
+		 	WebDriverWait wait = new WebDriverWait(driver, initWaitTime);;
+	        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+	        driver.findElement(by).sendKeys(value);
+	        System.out.println("Set text: " + value + " on element " + by);
+	    }
 }
 

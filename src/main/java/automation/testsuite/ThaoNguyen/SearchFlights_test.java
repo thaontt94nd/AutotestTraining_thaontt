@@ -28,8 +28,18 @@ public class SearchFlights_test extends CommonBase {
 				By.xpath("//h2[@class='sec__title text-white']"));
 		Search_Result.isDisplayed();
 	}
+	
+	@Test
+	public void Search_roundtrip() {
+		Search_Flights search = new Search_Flights(driver);
+		search.Search_roundtrip("England", "paris", "21072023-30072023");
+		
+		WebElement Search_Result = driver.findElement(
+				By.xpath("//h2[@class='sec__title text-white']"));
+		Search_Result.isDisplayed();
+	}
 	@AfterTest
 	public void closeBrowTest() {
-		quitDriver(driver);
+//		quitDriver(driver);
 	}
 }

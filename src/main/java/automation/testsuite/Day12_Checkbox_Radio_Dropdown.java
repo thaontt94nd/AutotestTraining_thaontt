@@ -9,7 +9,7 @@ import automation.common.CommonBase;
 
 public class Day12_Checkbox_Radio_Dropdown extends CommonBase {
 	public void isSingleCheckboxSelected() {
-		driver = initDriverTest("https://demo.seleniumeasy.com/basic-checkbox-demo.html");
+		driver = initChromeDriver("https://demo.seleniumeasy.com/basic-checkbox-demo.html");
 		driver.findElement(By.id("isAgeSelected")).isSelected();
 		boolean isSelected = false;
 		// Tiếp theo, nếu như check box chưa được check thì thực hiện click vào ô
@@ -22,7 +22,7 @@ public class Day12_Checkbox_Radio_Dropdown extends CommonBase {
 	}
 	@Test
 	public void isRadioButtonSelected() {
-		driver = initDriverTest("https://demo.seleniumeasy.com/basic-radiobutton-demo.html");
+		driver = initChromeDriver("https://demo.seleniumeasy.com/basic-radiobutton-demo.html");
 		// Tìm locator của Male checkbox và lưu vào Webelement
 		WebElement checkboxMale=driver.findElement(By.xpath("(//input[@value='Male' and @type='radio'])[1]"));
 		checkboxMale.click();
@@ -52,7 +52,7 @@ public class Day12_Checkbox_Radio_Dropdown extends CommonBase {
 	*/
 	@Test
 	public void selectDropdownlist() {
-		driver = initDriverTest("https://demo.seleniumeasy.com/basic-select-dropdown-demo.html");
+		driver = initChromeDriver("https://demo.seleniumeasy.com/basic-select-dropdown-demo.html");
 		// 2
 		Select dropDaySelect = new Select(driver.findElement(By.id("select-demo")));
 		//3

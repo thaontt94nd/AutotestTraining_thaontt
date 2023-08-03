@@ -21,7 +21,7 @@ public class LoginPage_day14 extends CommonBase {
 	WebDriver driver;
 	@BeforeTest
 	public void openchromeDriver() {
-		driver = initChromeDirvier(CT_Account.webURL);
+		driver = initChromeDriver(CT_Account.webURL);
 	}
 	@Test
 	public void Loginsucessfully() {

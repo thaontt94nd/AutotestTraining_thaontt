@@ -12,7 +12,7 @@ public class Checkbox extends CommonBase{
 	
 	@Test
 	public void isSingleCheckboxSelected() {
-		driver=initDriverTest("https://demo.seleniumeasy.com/basic-checkbox-demo.html");
+		driver=initChromeDriver("https://demo.seleniumeasy.com/basic-checkbox-demo.html");
 		driver.findElement(By.id("isAgeSelected")).isSelected();
 		boolean isSelected = false;
 		if(isSelected==false) {
@@ -25,7 +25,7 @@ public class Checkbox extends CommonBase{
 	
 	@Test
 	public void isRadioSelected() {
-		driver=initDriverTest("https://demo.seleniumeasy.com/basic-radiobutton-demo.html");
+		driver=initChromeDriver("https://demo.seleniumeasy.com/basic-radiobutton-demo.html");
 		WebElement CheckboxMale= driver.findElement(By.xpath("//input[@value='Male' and @name='optradio']"));
 		driver.findElement(By.xpath("//input[@value='Male' and @name='optradio' ]")).isEnabled();
 		CheckboxMale.click();
@@ -44,7 +44,7 @@ public class Checkbox extends CommonBase{
 	@Test
 	public void isdropdownlistSelected() {
 		//Vào trang
-		driver=initDriverTest("https://demo.seleniumeasy.com/basic-select-dropdown-demo.html");
+		driver=initChromeDriver("https://demo.seleniumeasy.com/basic-select-dropdown-demo.html");
 		//Tìm đến thẻ select là dropdownlist
 		Select dropdownlist= new Select(driver.findElement(By.xpath("//select[@id='select-demo']")));
 		//Tìm size của dropdownlist

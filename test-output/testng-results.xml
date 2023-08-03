@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="27224" started-at="2023-07-08T18:41:47 ICT" finished-at="2023-07-08T18:42:14 ICT">
+  <suite started-at="2023-07-23T19:54:45 ICT" name="Default suite" finished-at="2023-07-23T19:55:30 ICT" duration-ms="45447">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="27224" started-at="2023-07-08T18:41:47 ICT" finished-at="2023-07-08T18:42:14 ICT">
-      <class name="automation.testsuite.ThaoNguyen.ClientTest">
-        <test-method status="PASS" signature="openchromeDriver()[pri:0, instance:automation.testsuite.ThaoNguyen.ClientTest@221af3c0]" name="openchromeDriver" is-config="true" duration-ms="13627" started-at="2023-07-08T18:41:47 ICT" finished-at="2023-07-08T18:42:00 ICT">
+    <test started-at="2023-07-23T19:54:45 ICT" name="Default test" finished-at="2023-07-23T19:55:30 ICT" duration-ms="45447">
+      <class name="automation.testsuite.ThaoNguyen.SearchFlights_test">
+        <test-method is-config="true" signature="openSystemUnderTest()[pri:0, instance:automation.testsuite.ThaoNguyen.SearchFlights_test@609e8838]" started-at="2023-07-23T19:54:45 ICT" name="openSystemUnderTest" finished-at="2023-07-23T19:54:47 ICT" duration-ms="2557" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- openchromeDriver -->
-        <test-method status="PASS" signature="addclient_nullcompany()[pri:0, instance:automation.testsuite.ThaoNguyen.ClientTest@221af3c0]" name="addclient_nullcompany" duration-ms="13346" started-at="2023-07-08T18:42:00 ICT" finished-at="2023-07-08T18:42:14 ICT">
+        </test-method> <!-- openSystemUnderTest -->
+        <test-method signature="Search_oneway()[pri:0, instance:automation.testsuite.ThaoNguyen.SearchFlights_test@609e8838]" started-at="2023-07-23T19:54:48 ICT" name="Search_oneway" finished-at="2023-07-23T19:55:07 ICT" duration-ms="19786" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addclient_nullcompany -->
-        <test-method status="PASS" signature="closechromeDriver()[pri:0, instance:automation.testsuite.ThaoNguyen.ClientTest@221af3c0]" name="closechromeDriver" is-config="true" duration-ms="210" started-at="2023-07-08T18:42:14 ICT" finished-at="2023-07-08T18:42:14 ICT">
+        </test-method> <!-- Search_oneway -->
+        <test-method signature="Search_roundtrip()[pri:0, instance:automation.testsuite.ThaoNguyen.SearchFlights_test@609e8838]" started-at="2023-07-23T19:55:07 ICT" name="Search_roundtrip" finished-at="2023-07-23T19:55:30 ICT" duration-ms="23071" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closechromeDriver -->
-      </class> <!-- automation.testsuite.ThaoNguyen.ClientTest -->
+        </test-method> <!-- Search_roundtrip -->
+        <test-method is-config="true" signature="closeBrowTest()[pri:0, instance:automation.testsuite.ThaoNguyen.SearchFlights_test@609e8838]" started-at="2023-07-23T19:55:30 ICT" name="closeBrowTest" finished-at="2023-07-23T19:55:30 ICT" duration-ms="9" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowTest -->
+      </class> <!-- automation.testsuite.ThaoNguyen.SearchFlights_test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
